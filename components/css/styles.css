@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
-*
-{
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Play', sans-serif;
-  
+  font-family: "Play", sans-serif;
 }
-header
-{
+header {
   position: absolute;
   top: 0;
   left: 0;
@@ -19,16 +16,14 @@ header
   justify-content: space-between;
   align-items: center;
 }
-header .logo
-{
+header .logo {
   color: #158100;
   text-transform: uppercase;
   cursor: pointer;
   width: 420px;
   height: 100px;
 }
-.toggle
-{
+.toggle {
   position: relative;
   width: 60px;
   height: 60px;
@@ -38,35 +33,25 @@ header .logo
   background-position: center;
   cursor: pointer;
 }
-.toggle.active
-{
+.toggle.active {
   background: url(https://i.ibb.co/rt3HybH/close.png);
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: center;
   cursor: pointer;
 }
-.showcase
-{
-  position: absolute;
-  right: 0;
-  width: 100%;
-  min-height: 100vh;
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.showcase {
   background: #111;
+  left: calc(50% - 350px);
+  margin-top: 40px;
+  padding: 40px;
+  position: absolute;
   transition: 0.5s;
+  width: 700px;
   z-index: 2;
 }
-.showcase.active
-{
-  right: 300px;
-}
 
-.showcase video
-{
+.background-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,9 +59,9 @@ header .logo
   height: 100%;
   object-fit: cover;
   opacity: 0.8;
+  z-index: -1;
 }
-.overlay
-{
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,83 +70,78 @@ header .logo
   background: #03a9f4;
   mix-blend-mode: overlay;
 }
-.text
-{
+.text {
+  align-items: stretch;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
   position: relative;
   z-index: 10;
 }
 
-.text h2
-{
+.text h2 {
   font-size: 5em;
   font-weight: 800;
   color: #158100;
   line-height: 1em;
   text-transform: uppercase;
 }
-.text h3
-{
+.text h3 {
   font-size: 4em;
   font-weight: 700;
-  color: #FFF;
+  color: #fff;
   line-height: 1em;
   text-transform: uppercase;
 }
-.text p
-{
+.text p {
   font-size: 1.1em;
   color: #fff;
   margin: 20px 0;
   font-weight: 400;
   max-width: 700px;
-  padding-right: 3rem;
+  word-break: break-word;
 }
-.text a
-{
-  display: inline-block;
+.text p:first-of-type {
+  margin-bottom: 40px;
+}
+.text a {
   font-size: 1em;
   background: #158100;
   padding: 10px 30px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
-  margin-top: 10px;
+  align-self: flex-start;
   color: #111;
   letter-spacing: 2px;
   transition: 0.2s;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
-.text a:hover
-{
+.text a:hover {
   letter-spacing: 6px;
 }
-.social
-{
-  position: absolute;
+
+.social {
   z-index: 10;
-  bottom: 20px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.social li
-{
+.social li {
   list-style: none;
 }
-.social li a
-{
+.social li a {
   display: inline-block;
   margin-right: 20px;
   filter: invert(1);
   transform: scale(0.5);
   transition: 0.5s;
 }
-.social li a:hover
-{
+.social li a:hover {
   transform: scale(0.5) translateY(-15px);
 }
-.menu
-{
+.menu {
   position: absolute;
   top: 0;
   right: 0;
@@ -171,55 +151,35 @@ header .logo
   justify-content: center;
   align-items: center;
 }
-.menu ul
-{
+.menu ul {
   position: relative;
 }
-.menu ul li
-{
+.menu ul li {
   list-style: none;
 }
-.menu ul li a
-{
+.menu ul li a {
   text-decoration: none;
   font-size: 24px;
   color: #111;
 }
-.menu ul li a:hover
-{
-  color: #03a9f4; 
+.menu ul li a:hover {
+  color: #03a9f4;
 }
 
-@media (max-width: 991px)
-{
-  .showcase,
-  .showcase header
-  {
-    padding: 40px;
-  }
-  .text h2
-  {
+@media (max-width: 991px) {
+  .text h2 {
     font-size: 3em;
   }
-  .text h3
-  {
+  .text h3 {
     font-size: 2em;
   }
 }
 
-@media screen and (max-width: 480px)
-{.showcase,
-.showcase header {max-width: calc(100% - 3em);}
-}
-
-@media screen and (max-width: 320px)
-{.showcase,
-  .showcase header {max-width: calc(100% - 3em);}
-}
-
-@media screen and (max-width: 480px)
-{.showcase {max-width: calc(100% - 3em);
-  padding: 0;
+@media screen and (max-width: 720px) {
+  .showcase {
+    width: calc(100% - 40px);
+    padding: 20px;
+    margin: 20px;
+    left: 0;
   }
 }
-
